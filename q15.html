@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Button Styles Challenge</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f7f7f7;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .button {
+      padding: 15px 30px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      background: linear-gradient(45deg, #ff6a00, #ee0979);
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      outline: none;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .button:hover {
+      background: linear-gradient(45deg, #ee0979, #ff6a00);
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .message {
+      display: none;
+      font-size: 20px;
+      color: #333;
+      margin-top: 20px;
+      font-weight: bold;
+      animation: slideIn 1s ease-out;
+    }
+
+    @keyframes slideIn {
+      0% {
+        transform: translateY(-50px);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <button class="button" onclick="showMessage()">Click Me!</button>
+
+  <div class="message" id="message">
+    This was the last question of Sprint 1, Day 7
+  </div>
+
+  <script>
+    function showMessage() {
+      const message = document.getElementById('message');
+      message.style.display = 'block';  
+    }
+  </script>
+
+</body>
+</html>
